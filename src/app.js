@@ -58,7 +58,8 @@ app.get("/weather",(req,res)=>{
         weathercode(latitude,longitude,(error,weatherdata)=>{
             (error?res.send({error}):res.send({
                 locaton:location,
-                weatherdata:weatherdata
+                weatherdata:weatherdata.description,
+                feelsLike:weatherdata.feelsLike
             }))
           
           })

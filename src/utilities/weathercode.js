@@ -12,9 +12,11 @@ const weathercode = (latitude,longitude,callback)=>{
             callback("Unable to find location",undefined)
         }
         else{
-            callback(undefined,`${body.current.weather_descriptions}.Its is currently ${body.current.temperature} degrees.The current temperature feelslike ${body.current.feelslike}.`
-            )
-
+           // callback(undefined,`${body.current.weather_descriptions}.Its is currently ${body.current.temperature} degrees.The current temperature feelslike ${body.current.feelslike}.`)
+            callback(undefined,{
+                "description":`${body.current.weather_descriptions}.Its is currently ${body.current.temperature} degrees.The current temperature feelslike ${body.current.feelslike}.`,
+                "feelsLike":body.current.feelslike
+            })
         }
     })
 
