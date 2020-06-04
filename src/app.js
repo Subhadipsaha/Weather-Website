@@ -31,8 +31,8 @@ app.get("",(req,res)=>{
 
 app.get("/about",(req,res)=>{
     res.render("about",{
-        title:"About our App",
-        name:"Subadip"
+        title:"About Me",
+        desc:"This website uses data from mapbox and weatherstack. This website is created by Subhadip Saha"
     })
 })
 
