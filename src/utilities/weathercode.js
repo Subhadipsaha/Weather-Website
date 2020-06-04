@@ -14,8 +14,11 @@ const weathercode = (latitude,longitude,callback)=>{
         else{
            // callback(undefined,`${body.current.weather_descriptions}.Its is currently ${body.current.temperature} degrees.The current temperature feelslike ${body.current.feelslike}.`)
             callback(undefined,{
-                "description":`${body.current.weather_descriptions}.Its is currently ${body.current.temperature} degrees.The current temperature feelslike ${body.current.feelslike}.`,
-                "feelsLike":body.current.feelslike
+                //"description":`${body.current.weather_descriptions}.Its is currently ${body.current.temperature}\u00B0C.The current temperature feelslike ${body.current.feelslike}.`,
+                "description":body.current.weather_descriptions,
+                "temperature":`${body.current.temperature}\u00B0C`,
+               // "tempchecker":body.current.temperature,
+                "feelsLike":`${body.current.feelslike}  `
             })
         }
     })

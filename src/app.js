@@ -59,7 +59,9 @@ app.get("/weather",(req,res)=>{
             (error?res.send({error}):res.send({
                 locaton:location,
                 weatherdata:weatherdata.description,
-                feelsLike:weatherdata.feelsLike
+                feelsLike:weatherdata.feelsLike,
+                temperature:weatherdata.temperature
+               // tempchecker:weatherdata.tempchecker
             }))
           
           })
